@@ -54,5 +54,7 @@ kubectl get deployments <deployment-name> –o yaml
 kubectl logs -n ingress-nginx ingress-nginx-controller-f9d6fc8d8-d7xv9 -f
 ```
 ## Inital Setup
+```
 kubectl get validatingwebhookconfigurations 
 kubectl delete validatingwebhookconfigurations ingress-nginx-admission
+```
