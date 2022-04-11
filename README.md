@@ -159,3 +159,14 @@ kubectl create cm application-environment -n application --from-file=env
 ```
 kubectl create secret generic my-secret --from-literal=password=abc
 ```
+
+## Removing old replicasets (Defaults to 10 old Replica Sets)
+```
+Removing old replicasets is part of the Deployment object, but it is optional. You can set .spec.revisionHistoryLimit to tell the Deployment how many old replicasets to keep around.
+Here is a YAML example:
+apiVersion: apps/v1
+kind: Deployment
+spec:
+  revisionHistoryLimit: 0 # Default to 10 if not specified
+  
+```
