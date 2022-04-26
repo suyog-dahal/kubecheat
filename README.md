@@ -1,5 +1,5 @@
 ## Ports Required
-# IMPORTANT!!!! If 8472/udp is not opened network gets fucked up in flannel !!!!
+# IMPORTANT!!!! If 8472/udp is not opened network (internet) is done for in flannel !!!!
 ```
 Master: 6443/tcp 2379/tcp 2380/tcp 10250/tcp 10251/tcp 10252/tcp 10255/tcp 80/tcp 443/tcp 8285/tcp 8443/tcp 8472/udp
 OS: 10250/tcp 30000-32767/tcp 10255/tcp 8472/udp 8443/tcp
@@ -158,6 +158,11 @@ kubectl create cm application-environment -n application --from-file=env
 ## Create secret for password for db (sets to base64)
 ```
 kubectl create secret generic my-secret --from-literal=password=abc
+```
+
+## Create namespace in Kubernetes
+```
+kubectl create namespace THISNAME
 ```
 
 ## Removing old replicasets (Defaults to 10 old Replica Sets)
