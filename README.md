@@ -4,6 +4,11 @@
 Master: 6443/tcp 2379/tcp 2380/tcp 10250/tcp 10251/tcp 10252/tcp 10255/tcp 80/tcp 443/tcp 8285/tcp 8443/tcp 8472/udp
 OS: 10250/tcp 30000-32767/tcp 10255/tcp 8472/udp 8443/tcp
 ```
+## Kubernetes Installation Basics
+```
+- The config file in  the .kube directory is copied from /etc/kubernetes/config file
+- The Path /etc/kubernetes/manifests contains the yml for kube-proxy, schedular, etcd and other yaml file. This folder is read during kubeadm init which is   used to run the pods of etcd and other.  
+```
 ## Get pod and Cluster information
 ```
 kubectl get pod cid network
