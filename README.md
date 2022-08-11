@@ -180,3 +180,12 @@ spec:
   revisionHistoryLimit: 0 # Default to 10 if not specified
   
 ```
+
+## Adding the host alias in the container:Put These in the container spec
+hostAliases:
+      - hostnames:
+        - abc.com
+        - www.cde.com
+        - check-sum.org
+        ip: IP_TO_MAP_TO
+         
