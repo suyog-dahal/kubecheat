@@ -193,6 +193,8 @@ hostAliases:
 ```     
 ### FACTS about HPA
 ```You target the deployment file for horizontal scaling.```
+### Adhoc HPA command
+```  kubectl autoscale deployment [Deploymen-Name] --cpu-percent=80 --min=1 --max=1 ```
 ## HPA YAML File
 ```
 apiVersion: autoscaling/v1
@@ -215,3 +217,6 @@ spec:
 ``` kubectl get hpa -n namespace --watch ```
 ## for single deployment hpa resource check
 ```kubectl describe hpa -n [namespace] [hpa name]```
+
+## To use top command for pods in kubectl must install metric api, below link contains the solution to metric api installation 
+```https://stackoverflow.com/questions/52694238/kubectl-top-node-error-metrics-not-available-yet-using-metrics-server-as-he```
