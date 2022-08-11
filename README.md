@@ -8,6 +8,7 @@ OS: 10250/tcp 30000-32767/tcp 10255/tcp 8472/udp 8443/tcp
 ```
 - The config file in  the .kube directory is copied from /etc/kubernetes/config file
 - The Path /etc/kubernetes/manifests contains the yml for kube-proxy, schedular, etcd and other yaml file. This folder is read during kubeadm init which is   used to run the pods of etcd and other.  
+- NOTE: While creating secrets the secrets should be created under a desired namespace since the secrets created has a local scope and can be used only in the desired namespace. 
 ```
 ## Get pod and Cluster information
 ```
@@ -189,4 +190,28 @@ hostAliases:
         - www.cde.com
         - check-sum.org
         ip: IP_TO_MAP_TO
-```         
+```     
+### FACTS about HPA
+```You target the deployment file for horizontal scaling.```
+## HPA YAML File
+```
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  annotations:
+  name: testhpa
+  namespace: namespace
+spec:
+  maxReplicas: 5
+  minReplicas: 2
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: hpa-deployment
+  targetCPUUtilizationPercentage: 80
+```
+
+## Checking the resources of pods with hpa(horizontal pod autoscaler)
+``` kubectl get hpa -n namespace --watch ```
+## for single deployment hpa resource check
+```kubectl describe hpa -n [namespace] [hpa name]```
