@@ -39,9 +39,9 @@ Error: Error from server (InternalError): error when creating "nginx-ingress.yam
 1. kubectl get validatingwebhookconfigurations 
 2. kubectl delete validatingwebhookconfigurations [configuration-name]
 ```
-# Routing the external comming traffic to multiple worker nodes in Ingress controller
+# Routing the external comming traffic to multiple worker nodes in Ingress controller 
 ```
-ExternalTrafficPolicy is required in Ingress controller service for routing the ingress traffic to the module.
+ExternalTrafficPolicy is required in "Ingress controller service" for routing the ingress traffic to the module.
 Example
    externalIPs:
     - 213.23.12.42
