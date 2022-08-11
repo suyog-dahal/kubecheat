@@ -182,10 +182,11 @@ spec:
 ```
 
 ## Adding the host alias in the container:Put These in the container spec
+```
 hostAliases:
       - hostnames:
         - abc.com
         - www.cde.com
         - check-sum.org
         ip: IP_TO_MAP_TO
-         
+```         
