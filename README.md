@@ -220,3 +220,5 @@ spec:
 
 ## To use top command for pods in kubectl must install metric api, below link contains the solution to metric api installation 
 ```https://stackoverflow.com/questions/52694238/kubectl-top-node-error-metrics-not-available-yet-using-metrics-server-as-he```
+## Kubernetes Official Cheatsheet Link
+```https://kubernetes.io/docs/reference/kubectl/cheatsheet/```
