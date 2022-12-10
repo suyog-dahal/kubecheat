@@ -10,8 +10,14 @@ OS: 10250/tcp 30000-32767/tcp 10255/tcp 8472/udp 8443/tcp
 - The Path /etc/kubernetes/manifests contains the yml for kube-proxy, schedular, etcd and other yaml file. This folder is read during kubeadm init which is   used to run the pods of etcd and other.  
 - NOTE: While creating secrets the secrets should be created under a desired namespace since the secrets created has a local scope and can be used only in the desired namespace. 
 ```
-## Get pod and Cluster information
+
+## Regeneration a join token for the worker node
 ```
+kubeadm token generate -> This will generate the token for creating a join command
+kubeadm token create [token] --print-join-command -> This will print the new join command with new token valid for 24hrs
+```
+
+## Get pod and Cluster information
 kubectl get pod cid network
 kubectl cluster-info dump | grep -m 1 cluster-cidr
 ```
