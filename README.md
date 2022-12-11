@@ -18,6 +18,7 @@ kubeadm token create [token] --print-join-command -> This will print the new joi
 ```
 
 ## Get pod and Cluster information
+```
 kubectl get pod cid network
 kubectl cluster-info dump | grep -m 1 cluster-cidr
 ```
