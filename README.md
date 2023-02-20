@@ -224,7 +224,16 @@ spec:
 ``` kubectl get hpa -n namespace --watch ```
 ## for single deployment hpa resource check
 ```kubectl describe hpa -n [namespace] [hpa name]```
-
+## Rollout Deployement 
+``` kubectl rollout restart deploy [deployment_name] -n [namespace]```
+## Rollout History check
+``` kubectl rollout history -n [namespace] deploy [deployment_name] ```
+## Rollout undo 
+``` kubectl rollout undo -n [namespace] deploy [deployment_name] ```
+## Rollout undo to a particular revision [Note: you must annotate deployment with change-cause annotation ]
+``` kubectl rollout undo -n [namespace] deploy [deployment_name] --to-revision=25 ```
+## Annotating a deployment for rollout with change-cause
+``` kubectl annotate deployments.apps [deployment_name] kubernetes.io/change-cause="blabla"```
 ## To use top command for pods in kubectl must install metric api, below link contains the solution to metric api installation 
 ```https://stackoverflow.com/questions/52694238/kubectl-top-node-error-metrics-not-available-yet-using-metrics-server-as-he```
 ## Kubernetes Official Cheatsheet Link
