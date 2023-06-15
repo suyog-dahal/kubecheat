@@ -238,3 +238,10 @@ spec:
 ```https://stackoverflow.com/questions/52694238/kubectl-top-node-error-metrics-not-available-yet-using-metrics-server-as-he```
 ## Kubernetes Official Cheatsheet Link
 ```https://kubernetes.io/docs/reference/kubectl/cheatsheet/```
+
+# Kubernetes Certificates Cheatsheet
+## Rotating kubectl CA certificate
+### First check Cert Expiration
+```kubeadm certs check-expiration```
+### Rotate kubectl Cert Command
+```kubeadm certs renew all```
