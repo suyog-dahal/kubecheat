@@ -197,7 +197,14 @@ hostAliases:
         - www.cde.com
         - check-sum.org
         ip: IP_TO_MAP_TO
-```     
+```
+
+## Kubernetes Delete command
+### Delete all resources in a namespace at once
+```
+kubectl delete all --all -n kubernetes-dashboard
+```
+
 ### FACTS about HPA
 ```You target the deployment file for horizontal scaling.```
 ### Adhoc HPA command
